@@ -1,4 +1,4 @@
-import { DeployButton } from "@/components/deploy-button";
+
 import { EnvVarWarning } from "@/components/env-var-warning";
 import { AuthButton } from "@/components/auth-button";
 import { Hero } from "@/components/hero";
@@ -17,7 +17,12 @@ export default function Home() {
             <div className="flex gap-5 items-center font-semibold">
               <Link href={"/"}>Next.js Supabase Starter</Link>
               <div className="flex items-center gap-2">
-                <DeployButton />
+                <Link href="/instruments">
+                  <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2">
+                    <span>🧪</span>
+                    <span>Try Live Features</span>
+                  </button>
+                </Link>
               </div>
             </div>
             {!hasEnvVars ? <EnvVarWarning /> : <AuthButton />}
@@ -42,6 +47,7 @@ export default function Home() {
             >
               Supabase
             </a>
+            {" "}(supabase-js v2.56.0)
           </p>
           <ThemeSwitcher />
         </footer>

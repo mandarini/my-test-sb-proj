@@ -171,13 +171,36 @@ export default function Instruments() {
           )}
         </div>
 
-        {/* Add Sample Button */}
-        <button
-          onClick={addSampleInstrument}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg mb-4 transition-colors"
-        >
-          ➕ Add Random Instrument
-        </button>
+        {/* Action Buttons */}
+        <div className="flex gap-3 mb-4">
+          <button
+            onClick={addSampleInstrument}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors"
+          >
+            ➕ Add Random Instrument
+          </button>
+          <button
+            onClick={() => window.open(window.location.href, '_blank')}
+            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
+          >
+            <span>👥</span>
+            <span>Open New Tab (Test Presence)</span>
+          </button>
+        </div>
+
+        {/* Instructions */}
+        <div className="mb-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
+          <h3 className="font-semibold mb-2">🚀 Try the real-time features:</h3>
+          <ul className="text-sm space-y-1 text-gray-700 dark:text-gray-300">
+            <li>• Click &quot;Add Random Instrument&quot; to see live updates</li>
+            <li>• Click &quot;Open New Tab&quot; to instantly test user presence tracking</li>
+            <li>• Watch for real-time notifications when data changes</li>
+            <li>
+              • All changes are instantly synchronized across all connected
+              clients!
+            </li>
+          </ul>
+        </div>
       </div>
 
       {/* Instruments List */}
@@ -209,19 +232,7 @@ export default function Instruments() {
         )}
       </div>
 
-      {/* Instructions */}
-      <div className="mt-8 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
-        <h3 className="font-semibold mb-2">🚀 Try the real-time features:</h3>
-        <ul className="text-sm space-y-1 text-gray-700 dark:text-gray-300">
-          <li>• Click &quot;Add Random Instrument&quot; to see live updates</li>
-          <li>• Open this page in multiple tabs to see user presence</li>
-          <li>• Watch for real-time notifications when data changes</li>
-          <li>
-            • All changes are instantly synchronized across all connected
-            clients!
-          </li>
-        </ul>
-      </div>
+
     </div>
   );
 }
